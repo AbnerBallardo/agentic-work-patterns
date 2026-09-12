@@ -67,3 +67,64 @@ cases:
       should_direct_user_to:
         - organizational_information_handling_policy
         - approved_secure_workflow
+
+  - id: high-recipient-familiarity
+    description: A highly familiar recipient should not require the sender to repeat established project background.
+    recipient_familiarity_registry:
+      familiarity: High
+      project_code: PORTAL-01
+      project_name: Customer Portal Renewal
+      short_description: Customer self-service channel renewal
+      last_reviewed: 2026-09-12
+    input: >-
+      For PORTAL-01, a supplier dependency will arrive one week late. We can launch
+      unaffected services on schedule or delay the full launch. The limited launch
+      preserves customer value but needs clear scope communication; the delay avoids a
+      split release but moves the public milestone. I recommend the limited launch.
+      The product lead owns execution, and approval is needed Thursday.
+    expected:
+      readiness: Human review required
+      should_adjust_explanatory_depth_for:
+        - high_recipient_familiarity
+      should_not_request:
+        - repeated_project_background
+      should_compress:
+        - established_project_purpose
+        - familiar_project_history
+      must_not_infer_from_familiarity:
+        - current_status
+        - current_owner
+        - current_risk
+      should_include:
+        - explicit_decision
+        - distinct_options_and_tradeoffs
+        - sender_owned_recommendation
+        - current_owner_and_deadline
+
+  - id: medium-recipient-familiarity
+    description: A moderately familiar recipient should receive enough background to interpret the current issue.
+    recipient_familiarity_registry:
+      familiarity: Medium
+      project_code: FIN-02
+      project_name: Finance Platform Renewal
+      short_description: Finance platform replacement
+      last_reviewed: 2026-09-12
+    input: >-
+      For FIN-02, the supplier changed its proposal. I need leadership approval.
+    expected:
+      readiness: Needs information
+      should_adjust_explanatory_depth_for:
+        - medium_recipient_familiarity
+      should_request:
+        - specific_change_to_proposal
+        - sufficient_project_background
+        - current_business_consequence
+        - explicit_decision
+        - viable_options_and_tradeoffs
+        - sender_recommendation
+        - current_owner_and_deadline
+      must_not_infer_from_familiarity:
+        - proposal_change
+        - recommendation
+        - urgency
+        - current_owner

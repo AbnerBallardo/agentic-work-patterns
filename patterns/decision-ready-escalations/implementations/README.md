@@ -6,7 +6,7 @@ This directory is reserved for platform-specific adapters that have actually bee
 
 | Platform | Status | Last reviewed |
 |---|---|---|
-| [Microsoft 365 Copilot](microsoft-365-copilot/) | Field-informed, clean-room reconstruction; current authoring flow checked against Microsoft documentation | 2026-09-11 |
+| [Microsoft 365 Copilot](microsoft-365-copilot/) | Field-informed, clean-room reconstruction; current authoring flow checked against Microsoft documentation | 2026-09-12 |
 
 An implementation should:
 

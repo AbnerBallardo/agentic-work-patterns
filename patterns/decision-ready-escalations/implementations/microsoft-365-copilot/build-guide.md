@@ -1,6 +1,6 @@
 # Build and Configure the Microsoft 365 Copilot Agent
 
-- **Last reviewed:** 2026-09-11
+- **Last reviewed:** 2026-09-12
 - **Verification boundary:** Current interface details are based on Microsoft documentation and may differ by tenant, license, language, or administrative policy
 
 ## Before You Build
@@ -30,11 +30,29 @@ Use the following configuration:
 |---|---|
 | Name | `Decision-Ready Escalations` |
 | Description | `Helps employees clarify an escalation, identify missing decision context, and prepare a concise brief for human review. It does not make or send the decision.` |
-| Instructions | Copy the complete [vendor-neutral agent instructions](../../agent-instructions.md). |
+| Instructions | Copy the complete [vendor-neutral agent instructions](../../agent-instructions.md), including an approved private recipient-familiarity registry if used. |
 | Knowledge | Leave empty for the initial implementation. |
 | Capabilities | Leave optional capabilities disabled. |
 
 Using the manual configuration path is intentional. Microsoft's natural-language builder can add knowledge sources or capabilities in response to a description. Before testing, inspect the Configure tab and confirm that the agent has only the configuration you intended.
+
+## Configure the Optional Recipient Familiarity Registry
+
+The registry describes what the intended recipient already knows about selected projects. It helps the agent calibrate how much background to request and include; it does not give the agent factual project knowledge. It is embedded configuration context, not a connected Microsoft 365 knowledge source.
+
+Before copying the instructions into a private agent:
+
+1. Replace the synthetic rows with only the projects for which the intended recipient's familiarity is known.
+2. Use project codes where possible to prevent ambiguous matches.
+3. Keep each description short: enough to identify the project, but not to represent its status.
+4. Assign **High** when the recipient already knows the project well enough that only the current change and decision context are normally necessary.
+5. Assign **Medium** when the recipient recognizes the project but still needs background connecting the current issue to its consequences.
+6. Add a review date and remove or downgrade stale entries.
+7. Confirm that the complete instructions remain within the platform's current configuration limits.
+
+If the agent prepares messages for multiple recipients, do not reuse one person's familiarity labels for everyone. Maintain separate configurations or add an explicit intended-recipient field and test the routing carefully.
+
+Do not add live status, unresolved incidents, personal information, confidential commercial terms, credentials, or detailed risk records to the registry. Those facts must come from approved current input. If the agent requires frequently changing or extensive project knowledge, use an approved knowledge architecture and treat that as a separately governed implementation.
 
 ## Add Starter Prompts
 
@@ -99,6 +117,7 @@ The Team is the operating and discovery channel; sharing access through it does 
 
 - [ ] The instructions match the current repository version.
 - [ ] No unintended knowledge source or capability is enabled.
+- [ ] Recipient-familiarity entries are minimal, approved, current, and tested at each configured level.
 - [ ] All synthetic evaluation cases have been run.
 - [ ] Unsafe or incomplete inputs produce the expected stopping behavior.
 - [ ] Users are told that the agent prepares communication but does not validate facts or make decisions.

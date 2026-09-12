@@ -1,6 +1,6 @@
 # Microsoft 365 Copilot Implementation
 
-- **Last reviewed:** 2026-09-11
+- **Last reviewed:** 2026-09-12
 - **Platform:** Agent Builder in Microsoft 365 Copilot
 - **Implementation type:** Declarative agent applying a bounded agentic workflow
 - **Status:** Field-informed, clean-room reconstruction
@@ -18,7 +18,7 @@ Use Agent Builder for this implementation because the pattern needs persistent i
 |---|---|
 | Instructions | Use the vendor-neutral [agent instructions](../../agent-instructions.md). |
 | Interaction | User initiates a conversation; the agent may ask targeted follow-up questions. |
-| Knowledge | No connected organizational knowledge is required. |
+| Knowledge | No connected organizational knowledge is required. An optional private registry may record how familiar the intended recipient is with selected projects; it is not a project-fact source. |
 | Capabilities | None required. |
 | External actions | None. The agent does not send messages or update systems. |
 | Distribution | Share chat access with the Microsoft Team or associated group whose membership represents the intended audience. |

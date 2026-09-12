@@ -19,13 +19,27 @@ The original internal agent was used in real work. The public instructions in th
 - **Definitions used:** Declarative agent and agentic workflow
 - **Why the definition applies:** The system follows persistent instructions, asks conditional questions, evaluates readiness, stops on missing or unsafe information, and redirects the user when another communication channel is more appropriate.
 - **Interaction model:** User-initiated conversation that may continue across targeted clarification turns before producing an output
-- **Knowledge and tool access:** The public pattern requires no connected knowledge source or external tool; the user supplies the minimum cleared context required for the escalation.
+- **Knowledge and tool access:** The public pattern requires no connected knowledge source or external tool. A private implementation may embed a small registry describing the intended recipient's familiarity with selected projects; it controls explanatory depth but is not a source of project facts.
 - **External actions:** None. The public pattern does not send communications, update systems, approve requests, or create commitments.
 - **Autonomy boundary:** It may diagnose, question, organize, classify readiness, draft, and recommend another channel. It may not validate source facts, own the sender's recommendation, or make the recipient's decision.
 - **Stopping conditions:** Stop or withhold a send-ready draft when decision context is materially incomplete, the source is unsafe, human review is required, or a different channel is more appropriate.
 - **Human handoff and decision authority:** The sender validates the facts and owns the recommendation. The recipient retains the decision. A responsible human selects the channel and approves the final communication.
 
 The public materials are not themselves a deployed agent. They become an agent implementation when configured in a compatible platform or application. Platform-specific implementations belong under [implementations](implementations/) only after they have been publicly built and tested.
+
+## Optional Recipient Familiarity Configuration
+
+An implementation may maintain a small registry describing how familiar the intended recipient is with selected priority projects. This allows the agent to request and include less established background for projects the recipient follows closely, while requesting more context for projects the recipient knows only generally or does not recognize.
+
+The registry uses:
+
+- **High** for projects whose purpose and established background the recipient already knows well;
+- **Medium** for projects the recipient recognizes but may need additional background to interpret; and
+- no entry for projects that require the sender to provide full context.
+
+Populate real entries only in an approved private implementation. Record the project code, project name, a short identifying description, and the date the familiarity assessment was reviewed. Do not store live status, incidents, personal information, commercial terms, credentials, or detailed risk records in the registry.
+
+Review entries periodically and downgrade or remove stale ones. If one agent prepares messages for multiple recipients, maintain separate configurations or add an explicit intended-recipient field and test the routing; one person's familiarity must not be applied to another recipient.
 
 ## Quick Start
 
@@ -83,6 +97,7 @@ The sender validates the facts and owns the recommendation. The recipient retain
 
 The pattern works best when the sender can provide:
 
+- the project code or name when a private recipient-familiarity registry is configured;
 - what changed;
 - why it matters now;
 - the decision or action requested;
@@ -109,15 +124,16 @@ Missing information should be identified explicitly. The agent may proceed with 
 
 ## Agent Workflow
 
-1. Determine what the recipient must understand, decide, or do next.
-2. Separate known facts from interpretations, assumptions, and missing information.
-3. Check whether the issue is suitable for asynchronous written communication.
-4. Ask only the minimum targeted questions needed to close blocking gaps.
-5. Identify viable options and the material trade-off between them.
-6. Confirm that the recommendation belongs to the sender rather than the agent.
-7. Draft the shortest brief that preserves decision value.
-8. Flag consequential commitments or sensitive uncertainty for human review.
-9. Perform a final check for clarity, ownership, timing, and unsupported claims.
+1. Identify the project and the intended recipient's configured familiarity level, if a private registry is available.
+2. Determine what the recipient must understand, decide, or do next.
+3. Separate current facts from interpretations, assumptions, and missing information; use recipient familiarity only to calibrate explanatory background.
+4. Check whether the issue is suitable for asynchronous written communication.
+5. Ask only the minimum targeted questions needed to close blocking gaps.
+6. Identify viable options and the material trade-off between them.
+7. Confirm that the recommendation belongs to the sender rather than the agent.
+8. Draft the shortest brief that preserves decision value.
+9. Flag consequential commitments or sensitive uncertainty for human review.
+10. Perform a final check for clarity, ownership, timing, and unsupported claims.
 
 ## Failure Modes
 
@@ -139,12 +155,13 @@ Missing information should be identified explicitly. The agent may proceed with 
 - Do not paste real email threads merely because they are convenient context.
 - Apply organizational rules for confidentiality, personal data, retention, and approved AI services.
 - Review combinations of details that could identify people or organizations even after names are removed.
+- Keep real recipient-familiarity registries out of the public repository. In private implementations, use minimal approved descriptions, record a review date, and remove obsolete entries.
 
 ## Evaluation Criteria
 
 Use the [evaluation rubric](evaluations/rubric.md) and [synthetic test cases](evaluations/test-cases.yaml). A useful output must preserve facts and risk while reducing the effort required to understand the decision.
 
-The initial [Codex-assisted manual baseline](evaluations/baseline-2026-09-11.md) records a first-party smoke test of all four synthetic cases. It is not independent validation.
+The initial [Codex-assisted manual baseline](evaluations/baseline-2026-09-11.md) records a first-party smoke test of the original four synthetic cases. It predates the optional recipient-familiarity cases added on 2026-09-12 and is not independent validation.
 
 ## Implementation Options
 
