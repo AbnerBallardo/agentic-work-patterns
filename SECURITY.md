@@ -7,7 +7,7 @@ These patterns may be adapted to workflows containing confidential or personal i
 - Confirm where prompts, inputs, outputs, and logs are stored.
 - Apply your organization's data-classification, retention, access, and approved-tool policies.
 - Remove credentials, secrets, personal data, customer data, and unnecessary internal context.
-- Require human review for consequential, regulated, financial, legal, personnel, security, or reputational decisions.
+- Require human review for consequential outputs, actions, or decisions that could create financial, legal, personnel, regulatory, security, safety, or reputational effects.
 - Test with synthetic data before connecting a pattern to a live workflow.
 
 ## Reporting Sensitive Content

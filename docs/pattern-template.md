@@ -20,7 +20,7 @@ Copy this structure into `patterns/<pattern-name>/README.md`.
 - **External actions:**
 - **Autonomy boundary:**
 - **Stopping conditions:**
-- **Human handoff and decision authority:**
+- **Human oversight, handoff, and authority boundaries:**
 
 ## Organizational Problem
 
@@ -28,7 +28,7 @@ Describe the recurring problem and its consequence.
 
 ## Intended Users
 
-Name the primary user and the accountable decision-maker.
+Name the primary users, affected parties, and accountable owner or operator as applicable.
 
 ## When to Use It
 
@@ -40,17 +40,17 @@ Name the primary user and the accountable decision-maker.
 
 ## Human Responsibility
 
-State what the agent may support and what a human must validate, own, or decide.
+State what the agent may support or perform and what a human must validate, own, approve, monitor, or be able to override.
 
-## Required Inputs
-
--
-
-## Expected Output
+## Required Inputs and Preconditions
 
 -
 
-## Agent Workflow
+## Expected Outcome, Output, or Action
+
+-
+
+## Agent Workflow or Behavior
 
 1.
 
@@ -77,4 +77,4 @@ Link only to implementations that have been built or tested.
 Separate firsthand observation, measured results, hypotheses, and unknowns.
 ```
 
-Each pattern should include vendor-neutral agent instructions, at least one synthetic example, and an evaluation rubric or test case.
+Each pattern should include a vendor-neutral behavioral specification or agent instructions, at least one synthetic example or scenario, and an evaluation rubric or test case appropriate to the claimed outcome.

@@ -1,8 +1,8 @@
 # Agentic Work Patterns
 
-> Agents should not replace executive judgment. They should prepare decisions for human judgment.
+> Agents should improve how work is understood, prepared, and carried out without obscuring human responsibility.
 
-This repository contains small, testable patterns for using AI agents to improve decisions, coordination, and everyday organizational work. The goal is not autonomy for its own sake. Each pattern should make a recurring problem easier to understand, improve the quality of the work handed from one person to another, and keep consequential judgment with an accountable human.
+This repository contains small, testable patterns for applying AI agents to recurring organizational work. A pattern may support analysis, communication, coordination, creation, operations, decision preparation, or another bounded outcome. The goal is not autonomy for its own sake. Each pattern must define the problem, intended behavior, limits, human responsibility, and evidence needed to evaluate whether it helps.
 
 ## Agent Terminology
 
@@ -27,7 +27,7 @@ Every pattern must identify:
 - the interaction model;
 - available knowledge, tools, and external actions;
 - the autonomy and stopping boundaries; and
-- the human handoff and decision authority.
+- the human oversight, handoff, and authority boundaries.
 
 ## Pattern Catalog
 
@@ -40,15 +40,15 @@ Every pattern must identify:
 ## How to Use a Pattern
 
 1. Read the pattern's problem, boundaries, and human-responsibility sections.
-2. Adapt the vendor-neutral agent instructions to your environment.
+2. Adapt the vendor-neutral behavioral contract or agent instructions to your environment.
 3. Run the synthetic examples and evaluation cases before using organizational data.
-4. Add privacy, security, legal, and review controls appropriate to the consequences of the workflow.
+4. Add privacy, security, legal, permission, action, and review controls appropriate to the workflow.
 5. Treat the pattern as a starting point, not as evidence that the same design will work unchanged in every organization.
 
 ## Repository Principles
 
-- Improve human judgment; do not hide or replace human accountability.
-- Preserve facts, uncertainty, options, trade-offs, ownership, and timing.
+- Improve work outcomes without hiding human responsibility.
+- Preserve the facts, constraints, uncertainty, provenance, ownership, and consequences necessary for safe and useful work.
 - Share reusable operating patterns rather than prompt tricks.
 - Keep the core pattern vendor-neutral.
 - Use synthetic or explicitly cleared examples only.
