@@ -4,6 +4,31 @@
 
 This repository contains small, testable patterns for using AI agents to improve decisions, coordination, and everyday organizational work. The goal is not autonomy for its own sake. Each pattern should make a recurring problem easier to understand, improve the quality of the work handed from one person to another, and keep consequential judgment with an accountable human.
 
+## Agent Terminology
+
+There is no single definition of `agent` shared by every platform, research community, or engineering team. This repository uses the term as a broad category and requires each pattern to disclose the behavior and authority of the system it describes.
+
+The following definitions may overlap:
+
+| Form | Meaning |
+|---|---|
+| Configured assistant | A model specialized through persistent instructions and optional knowledge for a recurring purpose. |
+| Declarative agent | A vendor-orchestrated agent configured through instructions, knowledge, capabilities, and optional actions. |
+| Agentic workflow | A bounded workflow in which the model applies conditional steps, asks questions, uses stopping rules, or hands control back to a human. |
+| Tool-using agent | An agent that selects tools to retrieve information or complete parts of a workflow. |
+| Action-taking agent | An agent permitted to create external effects, such as sending a message or updating a record. |
+| Autonomous agent | An agent that continues toward a goal across multiple steps with limited human direction. |
+
+These forms are not maturity levels, and a system may fit more than one. Calling a system an agent does not by itself imply tool use, external action, autonomous execution, or decision authority.
+
+Every pattern must identify:
+
+- the definition or definitions being used and why they apply;
+- the interaction model;
+- available knowledge, tools, and external actions;
+- the autonomy and stopping boundaries; and
+- the human handoff and decision authority.
+
 ## Pattern Catalog
 
 | Pattern | Status | Purpose |

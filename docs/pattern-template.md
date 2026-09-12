@@ -11,6 +11,17 @@ Copy this structure into `patterns/<pattern-name>/README.md`.
 - **Evidence basis:**
 - **Not established:**
 
+## Agent Definition
+
+- **Definition(s) used:**
+- **Why the definition applies:**
+- **Interaction model:**
+- **Knowledge and tool access:**
+- **External actions:**
+- **Autonomy boundary:**
+- **Stopping conditions:**
+- **Human handoff and decision authority:**
+
 ## Organizational Problem
 
 Describe the recurring problem and its consequence.

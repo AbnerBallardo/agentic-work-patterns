@@ -3,14 +3,29 @@
 ## Status and Evidence Basis
 
 - **Status:** Field-informed, clean-room reconstruction
-- **Evidence basis:** Firsthand qualitative experience using an agent to improve the preparation of executive communication
+- **Evidence basis:** Firsthand qualitative experience using a Microsoft 365 Copilot declarative agent to improve the preparation of executive communication
 - **Not established:** Quantified time savings, causal productivity improvement, universal applicability, or safe use without organization-specific controls
 
 ## Origin and Boundary
 
-This pattern is a clean-room reconstruction informed by an internal agent used in a previous executive role. It preserves the organizational lesson without reproducing private instructions, messages, recipient profiles, internal classifications, adoption details, or employer-specific context.
+This pattern is a clean-room reconstruction informed by an internal Microsoft 365 Copilot declarative agent used in a previous executive role. It preserves the organizational lesson without reproducing private instructions, messages, recipient profiles, internal classifications, adoption details, or employer-specific context.
 
 The original internal agent was used in real work. The public instructions in this repository are a separate reconstruction and have only the testing evidence recorded here.
+
+## Agent Definition
+
+- **Original implementation:** Microsoft 365 Copilot declarative agent
+- **Public artifact:** Vendor-neutral behavioral specification, synthetic examples, and evaluation material
+- **Definitions used:** Declarative agent and agentic workflow
+- **Why the definition applies:** The system follows persistent instructions, asks conditional questions, evaluates readiness, stops on missing or unsafe information, and redirects the user when another communication channel is more appropriate.
+- **Interaction model:** User-initiated conversation that may continue across targeted clarification turns before producing an output
+- **Knowledge and tool access:** The public pattern requires no connected knowledge source or external tool; the user supplies the minimum cleared context required for the escalation.
+- **External actions:** None. The public pattern does not send communications, update systems, approve requests, or create commitments.
+- **Autonomy boundary:** It may diagnose, question, organize, classify readiness, draft, and recommend another channel. It may not validate source facts, own the sender's recommendation, or make the recipient's decision.
+- **Stopping conditions:** Stop or withhold a send-ready draft when decision context is materially incomplete, the source is unsafe, human review is required, or a different channel is more appropriate.
+- **Human handoff and decision authority:** The sender validates the facts and owns the recommendation. The recipient retains the decision. A responsible human selects the channel and approves the final communication.
+
+The public materials are not themselves a deployed agent. They become an agent implementation when configured in a compatible platform or application. Platform-specific implementations belong under [implementations](implementations/) only after they have been publicly built and tested.
 
 ## Quick Start
 
@@ -134,6 +149,8 @@ The initial [Codex-assisted manual baseline](evaluations/baseline-2026-09-11.md)
 ## Implementation Options
 
 The core behavior is described in [agent-instructions.md](agent-instructions.md). Platform adapters belong under [implementations](implementations/) only after they have been built or tested.
+
+The [Microsoft 365 Copilot implementation guide](implementations/microsoft-365-copilot/) is a field-informed, clean-room reconstruction of the original implementation. It includes dated guidance for configuration, individual use, and incremental organizational rollout.
 
 ## Observed Value and Limitations
 
