@@ -161,7 +161,7 @@ Missing information should be identified explicitly. The agent may proceed with 
 
 Use the [evaluation rubric](evaluations/rubric.md) and [synthetic test cases](evaluations/test-cases.yaml). A useful output must preserve facts and risk while reducing the effort required to understand the decision.
 
-The initial [Codex-assisted manual baseline](evaluations/baseline-2026-09-11.md) records a first-party smoke test of the original four synthetic cases. It predates the optional recipient-familiarity cases added on 2026-09-12 and is not independent validation.
+The initial [Codex-assisted manual baseline](evaluations/baseline-2026-09-11.md) records a first-party smoke test of the original four synthetic cases. A [follow-up baseline](evaluations/baseline-2026-09-12.md) reruns all six cases after the optional recipient-familiarity behavior was added and records the expected control behavior for both familiarity cases. These are first-party smoke checks, not independent validation.
 
 ## Implementation Options
 
