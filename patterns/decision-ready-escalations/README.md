@@ -15,7 +15,7 @@ The original internal agent was used in real work. The public instructions in th
 ## Agent Definition
 
 - **Original implementation:** Microsoft 365 Copilot declarative agent
-- **Public artifact:** Vendor-neutral behavioral specification, synthetic examples, and evaluation material
+- **Public artifact:** Vendor-neutral behavioral specification, test examples using fictional information, and evaluation material
 - **Definitions used:** Declarative agent and agentic workflow
 - **Why the definition applies:** The system follows persistent instructions, asks conditional questions, evaluates readiness, stops on missing or unsafe information, and redirects the user when another communication channel is more appropriate.
 - **Interaction model:** User-initiated conversation that may continue across targeted clarification turns before producing an output
@@ -45,12 +45,12 @@ Review entries periodically and downgrade or remove stale ones. If one agent pre
 
 1. Use an AI assistant approved for the information you intend to process.
 2. Add [the vendor-neutral agent instructions](agent-instructions.md) as the assistant's behavior or custom instructions.
-3. Start with one of the [synthetic examples](examples/) or write your own synthetic notes.
+3. Start with one of the [fictional test examples](examples/) or write your own fictional notes.
 4. Ask the assistant to prepare a decision-ready escalation without inventing missing information.
 5. Review the result with the [evaluation rubric](evaluations/rubric.md).
 6. Adapt the pattern's privacy, channel, and human-review controls before considering live organizational use.
 
-Do not begin by pasting a real email thread. First confirm that the pattern behaves correctly with synthetic inputs and that the selected AI service is approved for the intended data.
+Do not begin by pasting a real email thread. First confirm that the pattern behaves correctly with fictional test inputs and that the selected AI service is approved for the intended data.
 
 ## Organizational Problem
 

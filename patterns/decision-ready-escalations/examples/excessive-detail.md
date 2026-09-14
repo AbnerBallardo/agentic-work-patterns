@@ -1,6 +1,6 @@
 # Example: Excessive Detail
 
-This example is synthetic.
+This example uses fictional information and does not reproduce a real organizational situation.
 
 ## Raw Input
 

@@ -1,6 +1,6 @@
 # Example: Decision-Ready Output
 
-This example is synthetic and illustrates the expected structure rather than a universally correct recommendation.
+This example uses fictional information and illustrates the expected structure rather than a universally correct recommendation.
 
 ## Validated Inputs
 

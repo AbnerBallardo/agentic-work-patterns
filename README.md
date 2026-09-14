@@ -35,13 +35,15 @@ Every pattern must identify:
 |---|---|---|
 | [Decision-Ready Escalations](patterns/decision-ready-escalations/) | Field-informed, clean-room reconstruction | Turn incomplete or overloaded escalation notes into a concise brief that a human decision-maker can act on. |
 
-`Field-informed` means the pattern draws on firsthand operating experience, but the public version is newly written, uses synthetic examples, and does not reproduce a private implementation. It does not imply quantified productivity gains or universal applicability.
+`Field-informed` means the pattern draws on firsthand operating experience, but the public version is newly written, uses test examples built from fictional information, and does not reproduce a private implementation. It does not imply quantified productivity gains or universal applicability.
+
+In this repository, `synthetic` means fictional information deliberately constructed for testing. It does not reproduce a real email, project, person, or organization; imply statistical representativeness; or guarantee privacy.
 
 ## How to Use a Pattern
 
 1. Read the pattern's problem, boundaries, and human-responsibility sections.
 2. Adapt the vendor-neutral behavioral contract or agent instructions to your environment.
-3. Run the synthetic examples and evaluation cases before using organizational data.
+3. Run the fictional test examples and evaluation cases before using organizational data.
 4. Add privacy, security, legal, permission, action, and review controls appropriate to the workflow.
 5. Treat the pattern as a starting point, not as evidence that the same design will work unchanged in every organization.
 
@@ -51,7 +53,7 @@ Every pattern must identify:
 - Preserve the facts, constraints, uncertainty, provenance, ownership, and consequences necessary for safe and useful work.
 - Share reusable operating patterns rather than prompt tricks.
 - Keep the core pattern vendor-neutral.
-- Use synthetic or explicitly cleared examples only.
+- Use fictional or explicitly cleared examples only.
 - State the evidence basis and material limitations of every pattern.
 
 See [Principles](docs/principles.md) for the full set of design constraints and [Pattern Template](docs/pattern-template.md) for the contribution structure.
@@ -64,7 +66,7 @@ See [SECURITY.md](SECURITY.md) before reporting a sensitive issue.
 
 ## Contributing
 
-Contributions that improve a pattern, evaluation, or synthetic example are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening an issue or pull request.
+Contributions that improve a pattern, evaluation, or test example are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening an issue or pull request.
 
 ## License
 
