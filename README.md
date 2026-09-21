@@ -4,6 +4,14 @@
 
 This repository contains small, testable patterns for applying AI agents to recurring organizational work. A pattern may support analysis, communication, coordination, creation, operations, decision preparation, or another bounded outcome. The goal is not autonomy for its own sake. Each pattern must define the problem, intended behavior, limits, human responsibility, and evidence needed to evaluate whether it helps.
 
+Decision-Ready Escalations is the first pattern in the collection. It focuses on decision preparation; future patterns may address other kinds of work and use different levels of autonomy.
+
+## Project Context
+
+For a short introduction to why I am building this collection and how it will evolve, visit the [Agentic Work Patterns construct page](https://www.abnerballardo.com/agentic-work-patterns/).
+
+The story behind the first pattern is available in [English](https://www.abnerballardo.com/en/post/as-a-cio-i-used-an-ai-agent-to-prepare-decisions-not-make-them/) and [Spanish](https://www.abnerballardo.com/es/post/como-cio-use-un-agente-de-ia-para-preparar-decisiones-no-tomarlas/).
+
 ## Agent Terminology
 
 There is no single definition of `agent` shared by every platform, research community, or engineering team. This repository uses the term as a broad category and requires each pattern to disclose the behavior and authority of the system it describes.

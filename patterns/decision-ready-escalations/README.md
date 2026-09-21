@@ -12,6 +12,13 @@ This pattern is a clean-room reconstruction informed by an internal Microsoft 36
 
 The original internal agent was used in real work. The public instructions in this repository are a separate reconstruction and have only the testing evidence recorded here.
 
+## Origin Story
+
+The related article explains the organizational problem behind this pattern, why the agent was deliberately bounded, and what I learned from using the original implementation:
+
+- [As a CIO, I Used an AI Agent to Prepare Decisions—Not Make Them](https://www.abnerballardo.com/en/post/as-a-cio-i-used-an-ai-agent-to-prepare-decisions-not-make-them/)
+- [Como CIO, usé un agente de IA para preparar decisiones—no tomarlas](https://www.abnerballardo.com/es/post/como-cio-use-un-agente-de-ia-para-preparar-decisiones-no-tomarlas/)
+
 ## Agent Definition
 
 - **Original implementation:** Microsoft 365 Copilot declarative agent
