@@ -165,7 +165,7 @@ Evaluate recipient fit, evidence integrity, gap detection, factual consistency, 
 
 ## Implementation Options
 
-No public platform implementation has been built or tested for this draft. The [agent instructions](agent-instructions.md) and [profile template](recipient-profile-template.md) are configuration starting points, not a deployed agent or validated adapter.
+A [suggested Microsoft 365 Copilot implementation](implementations/microsoft-365-copilot/README.md) provides adapted instructions and optional setup, guidance-maintenance, user, and adoption procedures. It has not been created or tested in an M365 tenant, and the author has no tenant testing planned. It is a documentation-based suggestion, not a validated deployment; the adoption checks are guidance for future adopters rather than outstanding author work. The vendor-neutral [agent instructions](agent-instructions.md) and [profile template](recipient-profile-template.md) remain the canonical behavioral and guidance contracts; existing Codex evaluations do not validate the platform adaptation.
 
 ## Observed Value and Limitations
 
