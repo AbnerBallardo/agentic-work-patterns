@@ -3,8 +3,10 @@
 ## Status and Evidence Basis
 
 - **Status:** Field-informed, clean-room reconstruction
-- **Evidence basis:** Firsthand qualitative experience using a Microsoft 365 Copilot declarative agent to improve the preparation of executive communication
-- **Not established:** Quantified time savings, causal productivity improvement, universal applicability, or safe use without organization-specific controls
+- **Evidence basis:** Firsthand qualitative experience using a Microsoft 365 Copilot declarative agent to help the author's team prepare escalations to the author in a previous executive role.
+- **Public artifact:** Vendor-neutral instructions, fictional examples, evaluation cases, and dated evaluation records; separate from the private implementation.
+- **Public evaluation:** Two recorded first-party Codex-assisted smoke checks from September 2026. They do not evaluate this review's new cross-pattern handoff clarifications.
+- **Not established:** Quantified time savings, causal productivity improvement, independent validation, universal applicability, reliable combined-pattern behavior, or safe use without organization-specific controls.
 
 ## Origin and Boundary
 
@@ -12,7 +14,11 @@ This pattern is a clean-room reconstruction informed by an internal Microsoft 36
 
 The original internal agent was used in real work. The public instructions in this repository are a separate reconstruction and have only the testing evidence recorded here.
 
-## Origin Story
+The author describes receiving both requests for decisions and information for awareness. This public specification focuses on preparing a decision or action request; its recorded cases do not establish a general awareness-only workflow. The author, rather than the agent, decided whether to communicate onward.
+
+The public contract's controls are design choices for a reconstruction, not a claim that each rule or readiness label was present or tested in the original agent.
+
+### Origin Story
 
 The related article explains the organizational problem behind this pattern, why the agent was deliberately bounded, and what I learned from using the original implementation:
 
@@ -22,7 +28,6 @@ The related article explains the organizational problem behind this pattern, why
 ## Agent Definition
 
 - **Original implementation:** Microsoft 365 Copilot declarative agent
-- **Public artifact:** Vendor-neutral behavioral specification, test examples using fictional information, and evaluation material
 - **Definitions used:** Declarative agent and agentic workflow
 - **Why the definition applies:** The system follows persistent instructions, asks conditional questions, evaluates readiness, stops on missing or unsafe information, and redirects the user when another communication channel is more appropriate.
 - **Interaction model:** User-initiated conversation that may continue across targeted clarification turns before producing an output
@@ -30,23 +35,9 @@ The related article explains the organizational problem behind this pattern, why
 - **External actions:** None. The public pattern does not send communications, update systems, approve requests, or create commitments.
 - **Autonomy boundary:** It may diagnose, question, organize, classify readiness, draft, and recommend another channel. It may not validate source facts, own the sender's recommendation, or make the recipient's decision.
 - **Stopping conditions:** Stop or withhold a send-ready draft when decision context is materially incomplete, the source is unsafe, human review is required, or a different channel is more appropriate.
-- **Human handoff and decision authority:** The sender validates the facts and owns the recommendation. The recipient retains the decision. A responsible human selects the channel and approves the final communication.
+- **Human oversight, handoff, and authority boundaries:** The sender validates the facts and owns the recommendation. The recipient retains the decision. A responsible human selects the channel and approves the final communication.
 
 The public materials are not themselves a deployed agent. They become an agent implementation when configured in a compatible platform or application. Platform-specific implementations belong under [implementations](implementations/) only after they have been publicly built and tested.
-
-## Optional Recipient Familiarity Configuration
-
-An implementation may maintain a small registry describing how familiar the intended recipient is with selected priority projects. This allows the agent to request and include less established background for projects the recipient follows closely, while requesting more context for projects the recipient knows only generally or does not recognize.
-
-The registry uses:
-
-- **High** for projects whose purpose and established background the recipient already knows well;
-- **Medium** for projects the recipient recognizes but may need additional background to interpret; and
-- no entry for projects that require the sender to provide full context.
-
-Populate real entries only in an approved private implementation. Record the project code, project name, a short identifying description, and the date the familiarity assessment was reviewed. Do not store live status, incidents, personal information, commercial terms, credentials, or detailed risk records in the registry.
-
-Review entries periodically and downgrade or remove stale ones. If one agent prepares messages for multiple recipients, maintain separate configurations or add an explicit intended-recipient field and test the routing; one person's familiarity must not be applied to another recipient.
 
 ## Quick Start
 
@@ -66,12 +57,21 @@ Decision-makers often receive one of two unusable escalations:
 1. A short message that transfers a problem upward without enough context to decide.
 2. A detailed message that forces the recipient to reconstruct the decision from background, technical notes, and unresolved discussion.
 
-Both increase decision latency and weaken accountability. The problem is not simply writing quality; it is the absence of a reliable handoff between the person closest to the issue and the person accountable for the decision.
+Both can delay decisions and obscure accountability. The problem is not simply writing quality; it is the absence of a reliable handoff between the person closest to the issue and the person accountable for the decision.
+
+## Relationship to Other Patterns
+
+[Executive Communication Preparation](../executive-communication-preparation/) addresses a later preparation problem: communicating onward using the leader's direction, maintained recipient guidance, and explicit delegation. This pattern is not restricted to technical audiences, and optional recipient familiarity does not by itself make it the second pattern.
+
+A brief here may give a leader sufficient context to decide or acknowledge the situation. Only the human leader can supply that judgment and direct the onward communication. Completing this brief does not imply that the leader has acted or authorized sending to another recipient.
+
+Use the shared [selection and handoff contract](../../README.md#pattern-selection-and-handoff) and [fictional combined example](../executive-communication-preparation/examples/pattern-handoff.md). Neither pattern requires the other, and the complete combined public workflow has not been behaviorally evaluated.
 
 ## Intended Users
 
 - Team leads, technical leaders, product leaders, and operators preparing an escalation
 - Executives, founders, and other accountable decision-makers receiving it
+- **Accountable responsibilities:** The sender owns factual validation and the recommendation; the recipient owns the decision. A responsible human chooses the channel and approves the final communication.
 
 ## When to Use It
 
@@ -100,7 +100,9 @@ The agent may diagnose missing context, organize facts, compare alternatives, ex
 
 The sender validates the facts and owns the recommendation. The recipient retains the decision. A responsible human chooses the communication channel and approves the final message.
 
-## Required Inputs
+Readiness describes preparation, not verified truth, decision approval, or authority to send onward. Routine sender review still applies when no additional review is required.
+
+## Required Inputs and Preconditions
 
 The pattern works best when the sender can provide:
 
@@ -117,9 +119,23 @@ The pattern works best when the sender can provide:
 
 Missing information should be identified explicitly. The agent may proceed with low-risk assumptions only when they are visible and do not create a material commitment.
 
-## Expected Output
+### Optional Recipient Familiarity Configuration
 
-1. **Readiness:** Ready, needs information, human review required, or use another channel
+An implementation may maintain a small registry describing how familiar the intended recipient is with selected priority projects. This allows the agent to request and include less established background for projects the recipient follows closely, while requesting more context for projects the recipient knows only generally or does not recognize.
+
+The registry uses:
+
+- **High** for projects whose purpose and established background the recipient already knows well;
+- **Medium** for projects the recipient recognizes but may need additional background to interpret; and
+- no entry for projects that require the sender to provide full context.
+
+Populate real entries only in an approved private implementation. Record the project code, project name, a short identifying description, and the date the familiarity assessment was reviewed. Do not store live status, incidents, personal information, commercial terms, credentials, or detailed risk records in the registry.
+
+Review entries periodically and downgrade or remove stale ones. If one agent prepares messages for multiple recipients, maintain separate configurations or add an explicit intended-recipient field and test the routing; one person's familiarity must not be applied to another recipient.
+
+## Expected Outcome, Output, or Action
+
+1. **Readiness:** Ready for sender review, needs information, human review required, or use another channel
 2. **Decision requested:** One explicit decision or action
 3. **Suggested subject:** Topic plus the decision or signal
 4. **Executive summary:** What changed and why it matters
@@ -129,7 +145,7 @@ Missing information should be identified explicitly. The agent may proceed with 
 8. **Ownership and timing:** Who acts next and by when
 9. **Supporting detail:** A pointer to evidence that should not overload the main brief
 
-## Agent Workflow
+## Agent Workflow or Behavior
 
 1. Identify the project and the intended recipient's configured familiarity level, if a private registry is available.
 2. Determine what the recipient must understand, decide, or do next.
@@ -141,6 +157,7 @@ Missing information should be identified explicitly. The agent may proceed with 
 8. Draft the shortest brief that preserves decision value.
 9. Flag consequential commitments or sensitive uncertainty for human review.
 10. Perform a final check for clarity, ownership, timing, and unsupported claims.
+11. Hand the brief to the accountable recipient; do not infer a decision or onward instruction from a completed draft.
 
 ## Failure Modes
 
@@ -166,9 +183,11 @@ Missing information should be identified explicitly. The agent may proceed with 
 
 ## Evaluation Criteria
 
-Use the [evaluation rubric](evaluations/rubric.md) and [synthetic test cases](evaluations/test-cases.yaml). A useful output must preserve facts and risk while reducing the effort required to understand the decision.
+Use the [evaluation rubric](evaluations/rubric.md) and [fictional test cases](evaluations/test-cases.yaml). A useful output should preserve facts and risk while making the requested decision easier to understand.
 
-The initial [Codex-assisted manual baseline](evaluations/baseline-2026-09-11.md) records a first-party smoke test of the original four synthetic cases. A [follow-up baseline](evaluations/baseline-2026-09-12.md) reruns all six cases after the optional recipient-familiarity behavior was added and records the expected control behavior for both familiarity cases. These are first-party smoke checks, not independent validation.
+The [September 11 baseline](evaluations/baseline-2026-09-11.md) records a first-party Codex-assisted smoke check of four cases; its method includes generating or assessing expected responses. The [September 12 baseline](evaluations/baseline-2026-09-12.md) records a six-case follow-up including recipient familiarity. Their runtime/model and scope limitations remain part of the evidence. They are not independent validation, proof of repeated reliability, or tests of this review's handoff and readiness-wording clarifications.
+
+The examples illustrate expected responses; only the dated records describe prior evaluations. The [combined example](../executive-communication-preparation/examples/pattern-handoff.md) illustrates the expected complete workflow; that full sequence remains unevaluated. The second pattern's [dated records](../executive-communication-preparation/evaluations/baseline-2026-10-16-follow-up.md) test its own preparation behavior, including missing leader direction, without evaluating a first-stage agent run.
 
 ## Implementation Options
 
@@ -178,6 +197,8 @@ The [Microsoft 365 Copilot implementation guide](implementations/microsoft-365-c
 
 ## Observed Value and Limitations
 
-Firsthand qualitative experience indicates that an agent can help people prepare more consistent executive communication and reduce the effort required to reconstruct the decision from raw notes. No controlled measurement, quantified time saving, or independent validation is claimed here.
+**Firsthand observation:** The author reports that the private agent helped the team prepare information for the author's judgment and reduced the effort of reconstructing the issue from raw notes. This is qualitative experience, not a measured effect of the public instructions.
 
-The pattern must be adapted for the organization's decision rights, risk profile, communication norms, and approved technology. A good brief improves the conditions for judgment; it does not guarantee a good decision.
+**Public evaluation:** The dated first-party smoke checks support only the limited instruction/case observations recorded there. They do not establish model-independent reliability, live adoption, business impact, or behavior of the combined public workflow.
+
+**Design limitation:** The pattern must be adapted for organizational decision rights, risks, communication norms, and approved technology. Its intended contribution is better preparation for human judgment; a completed brief does not establish a good decision or permission to communicate onward.

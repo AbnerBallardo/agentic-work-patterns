@@ -2,11 +2,13 @@
 
 This example uses fictional information and does not reproduce a real organizational situation.
 
-## Raw Input
+The response below illustrates expected behavior; it is not a recorded evaluation run.
+
+## Inputs
 
 > We started planning the customer portal migration several months ago. The team has held recurring technical sessions and reviewed application logs, deployment scripts, browser compatibility, several unresolved interface defects, and a long history of environment differences. A supplier has explained that one dependency will take another week. Engineering discussed rebuilding part of the integration, adding temporary manual processing, launching only part of the portal, or moving the date. Several people have different views. Leadership needs an update.
 
-## Agent Diagnosis
+### Preparation Gaps
 
 The note contains useful background, but it does not yet identify:
 
@@ -17,7 +19,7 @@ The note contains useful background, but it does not yet identify:
 - the accountable owner; or
 - the decision deadline.
 
-## Appropriate Agent Response
+## Expected Response
 
 ```text
 Readiness:
@@ -38,3 +40,9 @@ Blocking questions:
 2. Which options are genuinely viable, and what is the primary trade-off of each?
 3. What does the accountable team recommend, who owns execution, and when is the decision needed?
 ```
+
+## What to Evaluate
+
+- Material signals survive compression.
+- Missing consequences, viable options, ownership, and timing are identified.
+- The agent clarifies the purpose instead of inventing an approval request.

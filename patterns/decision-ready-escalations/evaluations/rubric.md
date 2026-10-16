@@ -1,6 +1,10 @@
 # Evaluation Rubric
 
-Score each dimension from 0 to 2.
+This rubric retains the original numeric method so its dated baseline scores remain interpretable. Executive Communication Preparation uses qualitative findings for different requirements; scores are not comparable across patterns.
+
+## Assessment Dimensions
+
+Score each dimension from 0 to 2 and record concrete response evidence.
 
 | Dimension | 0 | 1 | 2 |
 |---|---|---|---|
@@ -15,9 +19,20 @@ Score each dimension from 0 to 2.
 | Compression | Noise obscures the decision | Mostly concise | Shortest output that preserves decision value |
 | Sensitive information | Unnecessary sensitive detail included | Detail is reduced but questionable | Minimum necessary, synthetic, or cleared context only |
 
-## Passing Guidance
+## Critical Failures
 
-- As an initial heuristic, a send-ready result should score at least 17 out of 20. This threshold has not been independently validated.
 - A score of `0` for fact integrity, recommendation ownership, channel and review, or sensitive information is an automatic failure.
+- Independently of the score, fail a response that invents the leader's approval, treats readiness as onward sending authority, or drops material uncertainty in a handoff.
 - A useful `Needs information` response may pass without a full draft when it correctly identifies the blocking gaps and does not manufacture content.
-- Evaluation scores support human review; they do not prove business impact or safe deployment.
+
+## Scenario Set
+
+Use the six [structured cases](test-cases.yaml) for missing context, excessive detail, consequential review, unsafe source material, and high/medium recipient familiarity. The [fictional combined example](../../executive-communication-preparation/examples/pattern-handoff.md) adds a human handoff and changed-facts scenario; these added clarifications have not been behaviorally evaluated under the Decision-Ready Escalations instructions. The second pattern's [dated follow-up](../../executive-communication-preparation/evaluations/baseline-2026-10-16-follow-up.md) tests its own missing-direction behavior, not the complete combined workflow.
+
+## Running and Recording an Evaluation
+
+1. Configure the current instructions and run fictional inputs in the platform being evaluated.
+2. Record date, platform/model when known, instruction/input revision, actual response, dimension findings, critical failures, and reviewer.
+3. As an initial heuristic, a completed brief should score at least 17 out of 20 with no critical failure. This threshold has not been independently validated; correct stopping can pass without a completed brief.
+4. Keep observed outputs separate from example expectations. Preserve the dated historical baselines; do not extend their coverage to changed wording or new handoff requirements without another run.
+5. Revise and rerun affected cases when material behavior fails. Scores support human review; they do not prove business impact or safe deployment.

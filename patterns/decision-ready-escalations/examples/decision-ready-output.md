@@ -2,7 +2,9 @@
 
 This example uses fictional information and illustrates the expected structure rather than a universally correct recommendation.
 
-## Validated Inputs
+The response below illustrates expected behavior; it is not a recorded evaluation run.
+
+## Inputs
 
 - A critical integration will be ready one week after the planned portal launch.
 - Launching without it would require temporary manual processing for affected requests.
@@ -10,7 +12,7 @@ This example uses fictional information and illustrates the expected structure r
 - The delivery lead recommends a limited launch for unaffected users while the integration is completed.
 - The product lead owns execution. A decision is required by Thursday.
 
-## Agent Output
+## Expected Response
 
 ```text
 Readiness:
@@ -41,8 +43,16 @@ Ownership and timing:
 The product lead owns the limited-launch plan. Decision required by Thursday; the revised communication follows after approval.
 
 Supporting detail:
-Link to the validated launch-impact assessment and delivery plan.
+Request current source references from the sender if available; no attachment
+is established by this example.
 
 Missing information:
 None for the internal decision. External communication still requires human review.
 ```
+
+## What to Evaluate
+
+- Distinct options, sender-owned recommendation, risk, ownership, and timing remain visible.
+- The output preserves required human review for the external milestone consequence.
+- No supporting document is implied to exist without supplied evidence.
+- A completed brief does not record the recipient's decision or authorize onward sending.

@@ -2,11 +2,13 @@
 
 This example uses fictional information and does not reproduce a real organizational situation.
 
-## Raw Input
+The response below illustrates expected behavior; it is not a recorded evaluation run.
+
+## Inputs
 
 > The customer portal migration is delayed. Please prepare a message asking leadership what we should do.
 
-## Appropriate Agent Response
+## Expected Response
 
 ```text
 Readiness:
@@ -24,6 +26,6 @@ Reason:
 The current note transfers the problem upward without enough context or ownership for a useful decision.
 ```
 
-## Why This Is Better Than Drafting
+## What to Evaluate
 
 A polished message would hide the absence of decision preparation. The agent should help the sender complete the thinking before improving the prose.

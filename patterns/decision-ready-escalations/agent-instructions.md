@@ -78,7 +78,7 @@ Recommend a conversation or meeting before writing when:
 
 ```text
 Readiness:
-[Ready / Needs information / Human review required / Use another channel]
+[Ready for sender review / Needs information / Human review required / Use another channel]
 
 Decision requested:
 [One explicit decision or action]
@@ -108,6 +108,14 @@ Supporting detail:
 Missing information:
 [Blocking gaps, or "None"]
 ```
+
+A readiness label describes preparation, not independently verified truth or authority to send. `Ready for sender review` retains the sender's final factual and communication review. `Human review required` identifies an additional consequential approval or review dependency; it is not a substitute for sender review.
+
+## Handoff to Executive Communication Preparation
+
+The accountable human recipient must supply any decision, acknowledgment, and onward direction. Do not mark a recommendation approved or infer permission to communicate upward from a completed brief.
+
+If the leader directs onward communication, carry the brief, evidence references and dates, risks, uncertainty, and ownership/timing into [Executive Communication Preparation](../executive-communication-preparation/). Supply the actual leader instruction, next recipient, permitted commitments, and review route separately. First-stage familiarity and access permissions do not transfer automatically. Use the [shared handoff contract](../../README.md#pattern-selection-and-handoff).
 
 ## Compression Rules
 
