@@ -1,97 +1,77 @@
-# Example: Preparing the Same Situation for Two Recipients
+# Example: One Situation, Two Executive Audiences
 
-All people, roles, records, dates, and events below are fictional test inputs. The profiles illustrate two configured audiences; they are not rules about all CEOs or CIOs. Expected outputs illustrate behavior and are not recorded evaluation results.
+Everything below is fictional. These profiles describe the configured recipients, not all CEOs or CIOs. The responses are illustrations, not recorded evaluation results.
 
 ## Inputs
 
-The sender supplies these fictional records as confirmed inputs:
+### The Situation
 
-- Operations record: a warehouse inventory reconciliation report was available at 08:00 rather than its scheduled 06:00 delivery today.
-- Operations confirmation: staff used an existing fallback check; warehouse dispatch continued, with no missed dispatch cutoff reported for this occurrence.
-- Engineering record: the local reconciliation job cannot start until a regional data export arrives. That export arrived two hours late today. The local job then completed in its normal duration.
-- Support record: the cause of the late regional export has not been confirmed.
-- The operations lead owns this warehouse's fallback. The integration lead owns the investigation of this warehouse's delay and will provide its next update tomorrow at 09:00. No ownership of other warehouses or their recovery is established.
-- No measured additional cost or confirmed permanent fix is available.
+Supplied October 16 operations, engineering, and support records say:
 
-These are supplied evidence assertions for the exercise; the agent has not independently verified external records.
+- The warehouse reconciliation report arrived at 08:00 instead of 06:00. An existing fallback kept dispatch running; no dispatch cutoff was missed for this occurrence.
+- The local job waits for a regional export. The export arrived two hours late; the local job then took its normal time. The export delay's cause is unconfirmed.
+- The operations lead owns this warehouse's fallback. The integration lead owns investigation of this warehouse's delay and the next update, tomorrow at 09:00. No ownership of another warehouse's recovery is established.
+- No additional cost or permanent fix has been established.
 
-### Leader's Direction
+These are human-supplied assertions, not independently verified by the assistant.
 
-The leader has reviewed the situation and acknowledged the fallback. Prepare separate awareness emails for the local CEO and regional CIO. Request no decision and make no new spending or delivery commitment. The sender may send each after checking the final wording against these records; return to the leader if a wider impact emerges.
+### Leader Direction
 
-Direction record: technology director, issued 2026-10-16 at 09:00 in fictional approved session DIR-WH-16; supplied directly by the leader in this scenario. Scope is these two internal awareness emails about this warehouse delay, with no new commitments. New wider impact, a changed request, or a superseding instruction requires returning to the leader. No additional approval remains outstanding for these two internal emails. These fictional identifiers are test inputs, not existing organizational records.
+A fictional technology director supplies this instruction directly in approved session DIR-WH-16, October 16, 2026 at 09:00:
 
-### Approved Fictional Profiles
+> I acknowledge the situation and fallback. Prepare separate internal awareness emails for the local CEO and regional CIO. No decision, spending, or delivery commitment is requested. Send after your own factual and wording review; no additional approval remains. Return to me if wider impact, a changed request/commitment, or superseding direction emerges.
 
-Both profiles are owned by the technology director, approved, and within their stated review period.
+This covers only these two emails about this warehouse delay. The assistant has not authenticated the director or checked an external approval system.
 
-| Profile | Relevant guidance | Familiarity |
+### Complete Current Profiles
+
+The technology director owns both approved profiles, reviewed October 1 and due for review November 1, 2026. All active rules are supplied here; no earlier file is needed.
+
+| Recipient | Guidance | Established familiarity |
 |---|---|---|
-| Local CEO, version 3, reviewed 2026-10-01 | Explain operational consequence, continuity, ownership, and next update. Include technical context only where necessary to understand the consequence. | Knows the warehouse operation but not the reconciliation architecture. |
-| Regional CIO, version 2, reviewed 2026-10-01 | Explain local dependencies, evidence for the current diagnosis, unresolved cause, and business consequence. | Knows the regional export service but not how this local reconciliation job depends on it. |
+| Local CEO, v3 | Explain operational consequence, continuity, ownership, and next update. Use only necessary technical context. | Knows the warehouse operation, not the reconciliation architecture. |
+| Regional CIO, v2 | Explain local dependencies, evidence for the diagnosis, unresolved cause, and business consequence. | Knows the regional export service, not this local dependency. |
+
+For the M365 exercise, fictional sender Sam confirms on October 16 that these pasted profiles match the owner's complete approved files CEO-v3 and CIO-v2. Profile comparison status: confirmed. This is a supplied human action, not a model verification or sending permission.
 
 ## Expected Response
 
-### Preparation Record
+Internal preparation should identify **Ready for sender review**, no information blocker, and no additional required approval. It should record the applicable profile, Sam's comparison, director instruction, supplied evidence, uncertainty, return condition, and next human step separately from the emails.
 
-```text
-Readiness: Ready for sender review.
-Blocking information: None.
-Required human reviews: None beyond routine sender review.
-Purpose: Awareness; no decision requested.
-Delegation: Leader explicitly permits direct sending after sender validation.
-Direction source: Technology director; 2026-10-16 09:00; DIR-WH-16;
-direct leader instruction covering these two internal awareness emails only.
-Evidence: Supplied operations, engineering, and support records.
-Material uncertainty: Cause of late regional export remains unconfirmed;
-no permanent fix or additional cost has been established.
-Return condition: Wider impact or a changed request/commitment.
-Next step: Sender checks both emails against the records and sends separately.
-```
-
-Identify the applicable profile and its review date in each session. The sender should not attach the internal profiles or preparation record to the email.
-
-### Local CEO Draft
+### Local CEO
 
 ```text
 Subject: Warehouse reporting delay — dispatch continued with fallback
 
-Today's inventory reconciliation report was available at 08:00 instead of
-06:00. Operations used the existing fallback check, and no dispatch cutoff
-was missed for this occurrence.
+Today's reconciliation report arrived at 08:00 rather than 06:00. Operations
+used the existing fallback, and no dispatch cutoff was missed this time.
 
-The report depends on an upstream data export that arrived late. The reason
-for that delay is still under investigation; a permanent fix is not yet
-confirmed.
+An upstream export arrived late; its cause and a permanent fix remain unconfirmed.
+The operations lead owns this warehouse's fallback. The integration lead will
+provide this warehouse's next update tomorrow at 09:00.
 
-No decision is requested at this stage. The operations lead owns this warehouse's fallback,
-and the integration lead will provide the next update tomorrow at 09:00.
+This is for awareness; no decision is requested.
 ```
 
-### Regional CIO Draft
+### Regional CIO
 
 ```text
 Subject: Warehouse reconciliation — late export delayed local reporting
 
-Today's local inventory reconciliation report was available at 08:00 rather
-than 06:00. Operations maintained dispatch using the existing fallback check;
-no dispatch cutoff was missed for this occurrence.
+Today's reconciliation report arrived at 08:00 rather than 06:00. Operations
+used the fallback; no dispatch cutoff was missed this time.
 
-The local reconciliation job starts after the regional export arrives. Today
-the export arrived two hours late; the local job then completed in its normal
-duration. That supports the explanation for the local reporting delay, but
-the cause of the late export itself remains unconfirmed.
+The local job starts after the regional export arrives. That export was two
+hours late today; the local job then ran in its normal time. This explains the
+local delay, but the export delay's cause and a permanent fix remain unconfirmed.
 
-No decision is requested at this stage. The integration lead owns the
-investigation and will update us tomorrow at 09:00. The operations lead
-continues to own this warehouse's fallback. A permanent fix is not yet confirmed.
+The integration lead owns investigation of this warehouse's delay and its next
+update tomorrow at 09:00. The operations lead owns this warehouse's fallback.
+This is for awareness; no decision is requested.
 ```
 
 ## What to Evaluate
 
-- Different explanatory depth, with the same delivery times, business outcome, uncertainty, and ownership.
-- No invented cost, root cause, commitment, or approval request.
-- Appropriate technical context for each configured audience.
-- Explicit sender review under the leader's delegation; no agent sending action.
-- If new wider impact is reported, return to the leader and separate the review requirement from any missing information. Do not extend the original warehouse's fallback owner or update commitment to another site.
-- If a second site's recovery owner/status or update coverage is required but unconfirmed, use Needs information and state those gaps. A working draft can say the original site's fallback owner is established while the second site's recovery ownership remains unconfirmed; no global owner may be inferred.
+Both drafts should preserve the same facts and uncertainty while explaining the local dependency differently. Neither should invent cost, cause, permission, or a decision request. The human reviews and sends.
+
+If wider impact emerges, return to the director. Do not extend the first warehouse's fallback owner or update promise to another site. Missing required new recovery ownership or update coverage means Needs information, with the director review retained. Missing or failed human profile comparison also blocks the M365 ready path.

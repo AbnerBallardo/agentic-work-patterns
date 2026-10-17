@@ -1,102 +1,41 @@
 # Pattern Template
 
-Copy this structure into `patterns/<pattern-name>/README.md`. Preserve the shared section names and order. Put pattern-specific configuration under the relevant section as H3 subsections; a common structure does not require identical instructions, examples, or evaluation measures.
+Help a reader understand the idea, see an example, and try it. Use the five sections below; keep the introduction to roughly one page. Put detailed instructions and supporting evidence behind links.
 
 ```markdown
 # Pattern Name
 
-## Status and Evidence Basis
+One sentence explaining what the pattern helps someone do.
 
-- **Status:** Prototype / Field-informed / Field-tested; identify draft state where applicable.
-- **Evidence basis:** Firsthand experience, external evidence, or hypothesis, with limits.
-- **Public artifact:** What this repository actually supplies.
-- **Public evaluation:** What was run, where results are recorded, and what remains untested.
-- **Not established:**
+## The Problem
 
-## Origin and Boundary
+Who faces this recurring problem, and why does it matter?
 
-Separate the original experience from the public reconstruction. Identify proposed safeguards and future extensions without implying they were used or evaluated in the original implementation. Add origin-story links here only when available.
+## The Idea in Practice
 
-## Agent Definition
+Explain the experience or hypothesis behind the pattern. Distinguish the original experience from the public example and instructions.
 
-- **Definitions used:**
-- **Why the definition applies:**
-- **Interaction model:**
-- **Knowledge and tool access:**
-- **External actions:**
-- **Autonomy boundary:**
-- **Stopping conditions:**
-- **Human oversight, handoff, and authority boundaries:**
+## How It Works
 
-## Quick Start
+Describe the few steps, the assistant's role, and the human responsibility. State what information it needs and what it may access or change.
 
-Link the instructions, fictional examples, and evaluation rubric. State prerequisites without implying deployment or completed evaluation.
+## Try It
 
-## Organizational Problem
+1. Link one complete fictional example.
+2. Link the copyable instructions and say what inputs to supply.
+3. Explain what to look for in the response.
 
-Describe the recurring problem and its consequence.
+Link an optional platform setup suggestion when useful.
 
-## Relationship to Other Patterns
+## Boundaries and Evidence
 
-Explain overlap, distinct purpose, and any human handoff or dependency. Link shared contracts rather than inventing a required chain. If none applies, say so.
+State the essential limits: what the assistant must not do, when it should ask or stop, and who reviews or decides.
 
-## Intended Users
-
-Name the primary users, affected parties, and accountable owner or operator as applicable.
-
-## When to Use It
-
--
-
-## When Not to Use It
-
--
-
-## Human Responsibility
-
-State what the agent may support or perform and what a human must validate, own, approve, monitor, or be able to override.
-
-## Required Inputs and Preconditions
-
--
-
-## Expected Outcome, Output, or Action
-
--
-
-## Agent Workflow or Behavior
-
-1.
-
-## Failure Modes
-
-| Failure mode | Required response |
-|---|---|
-| | |
-
-## Privacy and Security Considerations
-
--
-
-## Evaluation Criteria
-
--
-
-## Implementation Options
-
-Link only to implementations that have been built or tested.
-
-## Observed Value and Limitations
-
-Separate firsthand observation, measured results, hypotheses, and unknowns.
+Briefly identify firsthand experience, actual evaluations, hypotheses, and unknowns. Label untested setup suggestions honestly. Link additional examples and a concise evidence summary as optional reading.
 ```
 
-Each pattern should include a vendor-neutral behavioral specification or agent instructions, at least one synthetic example or scenario, and an evaluation rubric or test case appropriate to the claimed outcome.
+A useful first contribution needs an explanation, copyable instructions, and one fictional example. Its expected response can serve as the first check; a deployment, evaluation program, or tenant pilot is not required.
 
-## Companion Documentation Conventions
+Keep instructions focused on behavior and human control. Examples should distinguish `Inputs`, `Expected Response`, and `What to Evaluate`; expected output is not a recorded run. Additional examples are optional depth.
 
-- **Agent instructions:** Use role, operating rules or boundaries, pattern-specific preparation steps, output structure, and a final quality check. Align readiness terms with the README; distinguish routine sender review from additional required approval. Describe handoffs without assuming another agent or a readiness label grants authority.
-- **Examples:** Identify all material as fictional and expected, not observed evaluation output. Use `Inputs`, `Expected Response`, and `What to Evaluate` as the common sections; put profiles, leader direction, variants, and multiple recipient drafts under those sections as needed.
-- **Evaluation rubric:** Use `Assessment Dimensions`, `Critical Failures`, `Scenario Set`, and `Running and Recording an Evaluation`. Measures may differ by pattern; do not imply numerical scores and qualitative findings are directly comparable. Correct stopping can satisfy a case.
-- **Evaluation records:** Preserve dated historical results and their instruction/version coverage. Documentation changes and illustrative responses are not new behavioral runs. Identify uncovered changes instead of silently extending old results.
-- **Optional files:** Add a configuration template or structured case file only where useful. Platform implementations are separate from the core documentation and can be deferred.
+When evidence exists, use one `evaluations/README.md` with `Scope`, `Observations`, and `Limits`: date, evaluated revision, method/runtime, actual findings with useful response excerpts, and what remains untested. Keep material adverse findings; do not replace them with a blanket pass. Git holds superseded records and full run history. Identify changed instructions accurately rather than extending old results to new text. Platform guides should be short setup suggestions, with their review date and actual verification limits.

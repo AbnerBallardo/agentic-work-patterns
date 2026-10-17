@@ -1,89 +1,32 @@
-# Suggested Microsoft 365 Copilot Implementation
+# Try the Idea in Microsoft 365 Copilot
 
-- **Status:** Suggested configuration and operating guides; not tenant-tested. No tenant testing is planned by the author.
-- **Documentation reviewed:** 2026-10-16. Microsoft pages referenced here were dated 2026-09-30 when checked.
-- **Platform target:** Current Agent Builder in Microsoft 365 Copilot; no preview feature dependency.
-- **Build and runtime verification:** Not created, configured, shared, or tested in an M365 tenant for this suggestion.
+**Suggested setup, not tenant-tested. No tenant testing is planned by the author.** Documentation checked October 16, 2026. This is a starting exercise using fictional information.
 
-## Purpose and Boundary
+## Set Up
 
-This is a proposed platform adaptation of [Executive Communication Preparation](../../README.md), using a declarative agent with a bounded conversational workflow. It is not a reconstruction of the original Executive Drafter's platform, which is unspecified in the experience supporting the pattern.
+Microsoft documents **New agent → Skip to configure** in [Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-build-agents). Availability depends on your account and tenant settings.
 
-This is a cloud-service target, not a numbered product release or fixed model snapshot. Setup, evaluation, and rollout procedures are conditional guidance for a future adopter, not planned work or a deployment commitment by the author. If an adopter evaluates the suggestion, they should record the actual client and response mode.
-
-Scope is internal CEO and regional CIO email preparation, plus separate conversations proposing guidance updates. The human sends; the guidance owner adopts updates outside the agent. Committees, decks, automated sending, workflow approval enforcement, and automatic profile maintenance remain outside this suggestion.
-
-The [canonical instructions](../../agent-instructions.md) own the behavioral contract. The shorter [M365 instructions](agent-instructions.md) are an adaptation, not a replacement. Existing [behavioral records](../../evaluations/baseline-2026-10-16-follow-up.md) cover different instructions in Codex; they do not validate this adaptation, knowledge retrieval, permissions, or tenant behavior.
-
-## Configuration Profile
-
-| Element | Proposed configuration |
+| Field | Suggested value |
 |---|---|
-| Agent | One shared agent; each preparation explicitly selects the intended recipient. |
-| Instructions | Copy the complete local adapter file; do not append profiles to it. |
-| Recipient guidance | Separate complete CEO and CIO profiles, approved by the leader; selected SharePoint files in a private controlled location. |
-| Initial smoke check | Fictional profile text supplied directly in chat, before testing connected retrieval. |
-| Current facts and direction | Supplied separately in each case, with source references, scope, confirmation status, review route, and return conditions. |
-| Tools and knowledge | No mailbox, Teams history, general web, people lookup, external connectors, skills, or actions required. Inspect actual defaults before use. |
-| Human control | Sender validates; leader supplies direction/delegation; required reviewers approve. No readiness label authenticates authority. |
-| Distribution | Owner-only smoke checks, then approved controlled sharing with named test users and fictional sources; operational pilot only after acceptance. Named individual maintainers only. |
+| Name | `Executive Communication Prep` |
+| Description | `Helps teams prepare executive email from approved recipient guidance and actual leader direction. Asks about gaps; does not decide or send.` |
+| Instructions | Copy the entire [M365 instructions](agent-instructions.md). |
+| Knowledge | Leave empty for the first exercise; supply the fictional profile in chat. |
+| Other features | No web, mailbox, people search, connectors, actions, or preview skills are needed. Inspect defaults and turn optional features off where supported. |
 
-The agent's instructions are behavioral controls, not an authorization or security enforcement system. Retrieval cannot guarantee complete effective guidance. If the required profile text cannot be established, preparation remains blocked or uses an owner-confirmed complete copy supplied through an approved route. A named human must compare the available active rules against the approved current file for each new case/recipient or changed profile. Record expected/used version, confirmer/date/source, supply method, and confirmed/pending/failed status. Pending or failed comparison blocks readiness under Needs information, even if the agent believes retrieval is complete. The check verifies neither case facts nor sending authority. See [guidance maintenance](guidance-maintenance.md#complete-guidance-in-each-session).
+## Try One Case
 
-## Guides
+1. Use the [featured fictional example](../../examples/recipient-specific-preparation.md). Copy its Inputs, not its expected response.
+2. Supply the selected profile, case evidence, and leader direction in the conversation. Start a separate conversation for another recipient.
+3. Confirm the profile is complete and current. A short statement is enough: who compared it, when, the source/version, and whether it matches. The assistant records this in preparation notes; it cannot confirm it for you.
+4. Ask for the email. Check the facts, missing information, scoped ownership, and review route. A fictional direct-send instruction does not authorize an operational message.
 
-| File | Responsibility |
-|---|---|
-| [Build guide](build-guide.md) | Platform fields, source selection, configuration capture, and private checks. |
-| [M365 instructions](agent-instructions.md) | Entire copyable runtime instruction payload, within the platform limit. |
-| [Guidance maintenance](guidance-maintenance.md) | Proposal, adoption, versioning, retrieval completeness, and replacement. |
-| [User guide](user-guide.md) | Team input, readiness, human review, and sending handoff. |
-| [Rollout guide](rollout-guide.md) | Optional adoption checks, pilot considerations, ownership, and evidence-recording guidance. |
+The leader chooses whether a real communication needs their review; the sender validates and sends. Only the guidance owner adopts profile changes. See the [profile template](../../recipient-profile-template.md).
 
-## Instruction Traceability
+## If You Take It Further
 
-| Field | Value |
-|---|---|
-| Canonical source | `agent-instructions.md` at the pattern root, revision 2026-10-16 follow-up 1 |
-| Canonical SHA-256 | `826ace43e22c7d7002acd85c4f0ade1671faa1474fa3e8ea3463a30899b137ae` |
-| Adapter revision | M365 suggestion 3, 2026-10-16; status reframed, behavioral safeguards unchanged |
-| Copy boundary | Entire adapter Markdown file, including title, revision, headings, and final newline; no surrounding code fence |
-| Adapter character count | 7916, including line breaks; 7916 UTF-16 code units |
-| Adapter SHA-256 | `0b2e1787dcd7e03741db0feb1ff909de053e421a0050b6cd5bacd0bc72b6cee7` |
-| Equivalence claim | Static safeguard mapping only; behavioral equivalence not established. No tenant testing performed or planned by the author. |
+A maintained private SharePoint profile is optional. Use only complete approved current guidance and keep old versions outside active retrieval. A citation is not proof all rules were retrieved; missing guidance or human comparison remains a blocker. Microsoft's [knowledge documentation](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-add-knowledge) explains source permissions and the limits of Only use specified sources; it does not block general model knowledge.
 
-### Safeguard Mapping
+For shared experiments, use approved named test users and fictional sources; manage agent and source access separately. Test access is not operational pilot permission. Follow local controls before organizational use; this guide does not supply production readiness.
 
-Section names below identify where the adapter preserves the canonical requirements. This is a document review, not an execution result.
-
-| Canonical requirement | Adapter section | Tenant check |
-|---|---|---|
-| No external action, source fabrication, or authority grant; minimum disclosure | Role and Boundaries | Ask it to send/contact/update, fabricate facts, or reveal unrelated guidance. |
-| Observation versus interpretation; proposed update versus human adoption | Guidance Maintenance | Propose a change, withhold adoption, then start a fresh team session. |
-| Actual leader direction, full provenance, scope and confirmation; no invented ticket | Establish Direction | Asserted, other-case, superseded, reserved-review, valid direct-session instructions. |
-| Human first-stage handoff; no inherited familiarity or permissions | Establish Direction | Supply only a first-stage recommendation, then actual leader direction. |
-| Current applicable profile, full inherited rules, no title stereotypes; explicit human comparison in this adapter | Select Complete Guidance | Wrong/stale/partial/missing profile; pending/failed human comparison versus a confirmed complete inlined profile. |
-| Integrity applies to leader and approved profile; truthful compression and corrected evidence | Select Complete Guidance | Omission pressure, disputed facts, documented correction, legitimate compression. |
-| Material evidence gaps, decision options, chronology versus causation | Prepare the Email | Unsupported cost/blame; awareness without a decision request. |
-| Site/action/phase ownership and update coverage; material-change return | Prepare the Email | Second-site impact with unknown owners, then separately confirmed owners. |
-| Four-label precedence; blockers and reviews separate; legitimate uncertainty | Readiness and Human Handoff | Missing information plus reserved review; complete reviewed case; direct-send control; alternative channel. |
-| Notes separated from email; supported output and final check | Output and Final Check | Inspect the draft itself for broadened ownership, hidden uncertainty, or internal notes. |
-
-## Data and Access Boundary
-
-Proposed flow: leader-controlled SharePoint guidance and human-supplied case inputs enter an M365 Copilot conversation; preparation notes and draft text return to the user; the human takes any approved next action. Approved profile changes are written by their owner in SharePoint, not by the agent. No external service integration is proposed.
-
-Instructions/configuration, source documents, conversation inputs/history, outputs, and available audit/support records have different storage and retention controls. They are not assumed ephemeral. Before organizational use, the tenant owner must record applicable processing locations, retention/deletion, access, sensitivity labeling, audit, support-export handling, and offboarding for each. These tenant facts remain unverified. Microsoft describes Agent Builder processing as involving Microsoft 365 and Copilot Studio, so confirm the applicable service boundaries as well. Use Microsoft's [data/privacy planning guidance](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/data-privacy-security) and [Agent Builder service overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder); do not infer compliance from a prompt or an agent sharing setting.
-
-## Verification Status
-
-| Check | Current status |
-|---|---|
-| Instruction size, local links, and static safeguard mapping | Passed local checks on 2026-10-16; see the copy count and mapping above. No adapter behavior tested. |
-| M365 field acceptance and saved instruction fidelity | Not assessed in an M365 tenant. |
-| Adapted instruction behavior, including multi-turn pressure | Not assessed in an M365 tenant. |
-| Full profile retrieval, recorded human comparison, update visibility, and stale-session handling | Not assessed in an M365 tenant. |
-| Controlled test sharing, source permissions, revocation, licensing, and response modes | Not assessed in an M365 tenant. |
-| Pilot usefulness or business impact | Not measured. |
-
-This folder documents a suggestion, not a tested deployment. An adopter who later runs checks can use the [optional rollout guidance](rollout-guide.md#record-actual-tenant-results) to record actual results. No such work is planned here; the absence of tenant testing is an evidence limitation, not an outstanding task for the author.
+**Version and limits:** M365 starter 1, 7812 characters; adapted from the [canonical starter instructions](../../agent-instructions.md). This shortened version has not been behaviorally evaluated. The [evidence summary](../../evaluations/README.md) covers earlier Codex instructions, not this setup. A saved configuration or readable draft does not establish reliability or business value.

@@ -47,3 +47,22 @@ Every pattern should say whether it is a prototype, a field-informed reconstruct
 ## 10. Protect Source Boundaries
 
 Use synthetic examples by default. Do not publish private instructions, messages, internal classifications, stakeholder profiles, or operational records. Generalize the durable behavior and disclose only what is necessary for others to understand and evaluate it.
+
+## Agent Terminology
+
+There is no single definition of `agent` shared by every platform, research community, or engineering team. This repository uses the term as a broad category and requires each pattern to disclose the behavior and authority of the system it describes.
+
+The following definitions may overlap:
+
+| Form | Meaning |
+|---|---|
+| Configured assistant | A model specialized through persistent instructions and optional knowledge for a recurring purpose. |
+| Declarative agent | A vendor-orchestrated agent configured through instructions, knowledge, capabilities, and optional actions. |
+| Agentic workflow | A bounded workflow in which the model applies conditional steps, asks questions, uses stopping rules, or hands control back to a human. |
+| Tool-using agent | An agent that selects tools to retrieve information or complete parts of a workflow. |
+| Action-taking agent | An agent permitted to create external effects, such as sending a message or updating a record. |
+| Autonomous agent | An agent that continues toward a goal across multiple steps with limited human direction. |
+
+These forms are not maturity levels, and a system may fit more than one. Calling a system an agent does not by itself imply tool use, external action, autonomous execution, or decision authority.
+
+When describing a pattern, briefly state what the assistant does, what it can access or change, when it stops, and who remains responsible. A production implementation or tenant evaluation is not required to share a clearly labeled starting point.

@@ -1,45 +1,32 @@
-# Microsoft 365 Copilot Implementation
+# Try the Idea in Microsoft 365 Copilot
 
-- **Last reviewed:** 2026-09-12
-- **Platform:** Agent Builder in Microsoft 365 Copilot
-- **Implementation type:** Declarative agent applying a bounded agentic workflow
-- **Status:** Field-informed, clean-room reconstruction
-- **Current verification:** Authoring and sharing steps checked against Microsoft documentation; this public configuration has not been retested in a new tenant
+**Suggested setup; this shortened public configuration has not been tenant-tested.** The original private practice used M365 Copilot, but that does not validate these public instructions. Documentation checked October 16, 2026. No tenant testing is planned by the author.
 
-## Purpose
+## Set Up
 
-This implementation shows how to configure and introduce the [Decision-Ready Escalations pattern](../../README.md) in Microsoft 365 Copilot. It generalizes the operating approach used in a complex enterprise environment without reproducing a private production configuration, organizational data, or employer-specific controls.
+Microsoft documents **New agent → Skip to configure** in [Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-build-agents). Availability depends on your account and tenant settings.
 
-Use Agent Builder for this implementation because the pattern needs persistent instructions and a conversational interface, but no external actions. Copilot Studio may be appropriate if a future version needs more advanced distribution, integrations, or actions. That would be a different implementation and would require new risk controls and testing.
-
-## Configuration Profile
-
-| Element | Configuration |
+| Field | Suggested value |
 |---|---|
-| Instructions | Use the vendor-neutral [agent instructions](../../agent-instructions.md). |
-| Interaction | User initiates a conversation; the agent may ask targeted follow-up questions. |
-| Knowledge | No connected organizational knowledge is required. An optional private registry may record how familiar the intended recipient is with selected projects; it is not a project-fact source. |
-| Capabilities | None required. |
-| External actions | None. The agent does not send messages or update systems. |
-| Distribution | Share chat access with the Microsoft Team or associated group whose membership represents the intended audience. |
-| Human control | The sender validates facts, owns the recommendation, chooses the channel, and approves the final communication. |
-| Decision authority | The accountable recipient retains the decision. |
+| Name | `Decision-Ready Escalations` |
+| Description | `Helps a sender prepare a concise decision brief, identify missing context, and preserve human review. Does not decide or send.` |
+| Instructions | Copy the complete [starter instructions](../../agent-instructions.md). |
+| Knowledge | Leave empty; use fictional notes supplied in the conversation. |
+| Other features | No web, mailbox, connectors, or actions are needed. Inspect defaults and disable optional features where supported. |
 
-## Guides
+## Try One Case
 
-1. [Build and configure the agent](build-guide.md)
-2. [Use the agent to prepare an escalation](user-guide.md)
-3. [Pilot and roll out the practice](rollout-guide.md)
+1. Copy the Inputs from the [fictional decision brief](../../examples/decision-ready-output.md), leaving out the expected response.
+2. Ask the assistant to prepare an escalation. Answer any material questions using only the fictional facts.
+3. Check that the decision requested, options, sender's recommendation, risks, owner, and deadline are visible. The human recipient still decides.
+4. Remove an important input and see whether the assistant asks instead of inventing an answer.
 
-## Version Boundary
+No project familiarity list is needed for the first exercise. If useful later, supply only a recipient's approved project familiarity and review date; use it for background depth, not current facts.
 
-Microsoft changes product names, interfaces, licensing, available knowledge sources, capabilities, and sharing controls frequently. Treat the date above as part of the guidance. Before implementation, compare these guides with current Microsoft documentation and your tenant's administrative policies.
+## Limits
 
-## Official References
+Start with fictional information and review outputs yourself. The assistant does not independently verify evidence, approve, or send. Urgent, sensitive, contested, or consequential issues may need a different channel or further human review.
 
-- [Overview of declarative agents for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/overview-declarative-agent)
-- [Build agents with Agent Builder](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-build-agents)
-- [Best practices for declarative agents](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/declarative-agent-best-practices)
-- [Share and manage agents built with Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder-share-manage-agents)
-- [Agent Builder governance and current limitations](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder)
-- [How Microsoft 365 Groups manage Team membership](https://learn.microsoft.com/en-us/microsoftteams/office-365-groups)
+For a shared experiment, use approved named test users and fictional data. Agent access and source access are separate; a trial does not authorize operational use. Local permissions and controls remain the adopter's responsibility.
+
+**Version:** The current starter instructions are 4680 characters. They have not been behaviorally rerun. The [evidence summary](../../evaluations/README.md) covers earlier instructions; it does not establish this M365 setup's reliability or productivity. No tenant-testing project is required to share or explore the suggestion.

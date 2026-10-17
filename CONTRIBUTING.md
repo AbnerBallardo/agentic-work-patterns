@@ -1,33 +1,26 @@
 # Contributing
 
-Contributions should make an agent pattern clearer, safer, more testable, or more useful in real work.
+Help someone understand and try a useful idea for recurring organizational work.
 
-## Before Contributing
+## Share a Pattern
 
-- Use synthetic or explicitly cleared material only.
-- Do not include real emails, private prompts, customer data, credentials, personnel information, or confidential organizational context.
-- Generalize the problem before proposing a reusable pattern.
-- Separate observed behavior from hypotheses and recommendations.
-- Avoid vendor promotion, unsupported performance claims, and universal prescriptions.
+Use the [short pattern template](docs/pattern-template.md). Include:
 
-## Proposing a Pattern
+- The problem and the experience or hypothesis behind your idea.
+- How the assistant helps and what humans remain responsible for.
+- Copyable instructions and one fictional example with an expected response.
+- A brief, honest statement of limitations and what has actually been evaluated.
 
-Use [the pattern template](docs/pattern-template.md). A proposal should identify:
+You do not need a production implementation or tenant pilot. A platform setup suggestion is welcome when clearly labeled as suggested, documentation-checked, or actually tested.
 
-1. The recurring organizational problem.
-2. The intended users, affected parties, and accountable owner or operator.
-3. The input, output or action, permission, and authority contracts.
-4. When the pattern should and should not be used.
-5. Failure modes and material risks.
-6. Evidence basis and limitations.
-7. At least one synthetic example and one evaluation case.
+## Keep It Useful and Safe
 
-## Pull Requests
+Use fictional or explicitly cleared information. Do not submit private prompts, real emails, credentials, personal dossiers, or employer/client-confidential material. Removing names alone may not remove identifying context.
 
-- Keep each pull request focused on one pattern or one coherent improvement.
-- Explain what changed, why it matters, and how it was evaluated.
-- Preserve vendor neutrality in the core pattern. Put platform-specific material under the pattern's `implementations/` directory.
-- Use the repository's agent terminology and disclose the pattern's interaction, access, action, autonomy, and human-control boundaries.
-- Update links and evaluation cases when behavior changes.
+Keep the pattern independent of a vendor; put optional setup notes under its `implementations/` directory. State what the assistant can access or change and who approves consequential actions. Do not imply measured gains or independent validation without evidence.
 
-By contributing, you agree that your contribution may be distributed under this repository's license.
+## Make a Change
+
+Keep changes focused. Update affected links and examples, and explain what changed and how you checked it. Keep one concise `evaluations/README.md` when there is evidence to report: scope, observations with response excerpts, and limits. Identify the evaluated revision; let Git retain superseded records and full run history. See the [principles](docs/principles.md) for more detail.
+
+Contributions are distributed under the repository's license.
